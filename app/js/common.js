@@ -14,42 +14,56 @@ $(function() {
       }
     }, 2000);
     
-
-//-------------------------------hero slider---------------------------------------
-	var swiper = new Swiper('.portfolio__slider', {
-        direction: 'vertical',
-        slidesPerView: 1,
-        effect: 'fade',
-        lazy: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        autoplay: {
-		   delay: 4500,
-		   disableOnInteraction: false,
-		},
-    });
-
 //-------------------------------hero slider---------------------------------------
 	var swiper = new Swiper('.hero__slider', {
 	  spaceBetween: 0,
 	  effect: 'fade',
 	  lazy: true,
-	  autoplay: {
-	    delay: 4500,
-	    disableOnInteraction: false,
-	  },
+	  pagination: {
+        el: '.hero__pagination',
+      },
+	  // autoplay: {
+	  //   delay: 4500,
+	  //   disableOnInteraction: false,
+	  // },
 	});
+
+//-------------------------------work slider---------------------------------------
+	var swiper = new Swiper('.work__slider', {
+	  spaceBetween: 0,
+	  effect: 'fade',
+	  lazy: true,
+	  pagination: {
+        el: '.work__pagination',
+      },
+	  // autoplay: {
+	  //   delay: 4500,
+	  //   disableOnInteraction: false,
+	  // },
+	  navigation: {
+        nextEl: '.work__next',
+        prevEl: '.work__яprev',
+      },
+	});
+
+//-------------------------------work slider---------------------------------------
+    var swiper = new Swiper('.work__gallery', {
+      direction: 'vertical',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
 
 //-------------------------------fullpage---------------------------------------
 	$('#fullpage').fullpage({
 	    // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'], // фон цвет
-	    anchors: ['firstPage', 'secondPage', 'lastPage'], // якори
-	    menu: '#menu', // меню
+	    anchors: ['firstPage', 'twoPage', 'threePage', 'fourPage'], // якори
+	    menu: '.page', // меню
 	    lazyLoad: true, // оптимизация
-	    navigation: true, // навигация
-	    // navigationTooltips: ['Мы', 'Портфолио', 'Контакты'], // названия меню
+	    // navigation: true, // навигация
+	    // navigationTooltips: ['01', '02', '03', '04'], // названия меню
 	    showActiveTooltip: true, // меню
 	    slidesNavigation: true, // стрелки
 	});
