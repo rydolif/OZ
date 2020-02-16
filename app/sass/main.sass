@@ -41,7 +41,7 @@
 
 		a
 			position: relative
-			display: block
+			display: inline-block
 			letter-spacing: 1.2px
 			z-index: 1
 			font-weight: 600
@@ -106,7 +106,7 @@
 			letter-spacing: 1.2px
 			z-index: 1
 			font-weight: 600
-			margin-right: 15px
+			margin-right: 0
 			overflow: hidden
 			font-weight: 900
 			background-color: $accent
@@ -153,6 +153,15 @@
 		display: block
 		text-align: center
 
+		&:hover,
+		&:focus
+
+			img
+				transform: scale(.8)
+
+	img
+		transition: all .6s
+
 
 .navigation
 	position: absolute
@@ -176,6 +185,10 @@
 		color: #fff
 		padding: 4px
 		transition: all .6s
+
+		&:hover,
+		&:focus
+			background-color: rgba($accent, .5)
 
 	.active
 		background-color: $accent
@@ -308,7 +321,7 @@
 		left: 0
 		padding: 5.5vh
 		z-index: 2
-		font-size: 24px
+		font-size: 1.5em
 		letter-spacing: 1px
 		font-weight: 800
 		display: flex
@@ -326,6 +339,7 @@
 			align-items: center
 			filter: blur(0)
 			background-color: rgba(#fff, .25)
+			z-index: -1
 
 		&_list
 			display: flex
@@ -345,7 +359,8 @@
 		border: 4px solid transparent
 		background-color: transparent
 		opacity: 1
-
+		outline: none
+		
 		&::before
 			content: ''
 			position: absolute
@@ -429,6 +444,11 @@
 		right: 0
 		padding: 1vw 3vw
 
+		a
+			&:hover,
+			&:focus
+				color: $accent
+
 
 .catalog
 	position: relative
@@ -459,6 +479,8 @@
 
 			&:hover,
 			&:focus
+				z-index: 111
+
 				&::before
 					opacity: 1
 
@@ -483,7 +505,7 @@
 				right: 105%
 				bottom: 0
 				background-color: rgba(#fff, .16)
-				padding: 40px
+				padding: 5vh
 				border-right: 2px solid $accent
 				font-size: 1rem
 				width: 100%
@@ -505,6 +527,7 @@
 					top: 95%
 
 		a
+			display: inline-block
 			position: relative
 			transition: all .6s
 
@@ -661,67 +684,113 @@
 
 .work
 	background-color: #212121
+	height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: center
 
 	h2
 		margin-bottom: 0
 		line-height: .8
 
-	&__item
+	&__container
+		display: flex
+		justify-content: space-between
+		width: 100%
 
-		&_header
+	&__header
+		display: flex
+		justify-content: space-between
+		align-items: flex-end
+		margin-bottom: 7vh
+
+		div
 			display: flex
-			justify-content: space-between
 			align-items: flex-end
-			margin-bottom: 7vh
 
-			div
-				display: flex
-				align-items: flex-end
+		b
+			font-size: 2.5em
+			line-height: 1
+			font-weight: 900
+			color: $accent
 
-			b
-				font-size: 36px
-				line-height: 1
-				font-weight: 900
-				color: $accent
+		span
+			position: relative
+			display: block
+			margin: 0 20px
+			width: 27px
+			height: 27px
+			border-radius: 50%
+			border: 2px solid $accent
 
-			span
-				position: relative
+			&::before,
+			&::after
+				content: ''
+				position: absolute
 				display: block
-				margin: 0 20px
-				width: 27px
-				height: 27px
-				border-radius: 50%
-				border: 2px solid $accent
 
-				&::before,
-				&::after
-					content: ''
-					position: absolute
-					display: block
+			&::before
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				height: 2px
+				width: 13px
+				background-color: $accent
 
-				&::before
-					top: 50%
-					left: 50%
-					transform: translate(-50%, -50%)
-					height: 2px
-					width: 13px
-					background-color: $accent
+			&::after
+				top: 50%
+				right: 5px
+				transform: translate(0, -50%) rotate(45deg)
+				width: 7px
+				height: 7px
+				border-top: 2px solid $accent
+				border-right: 2px solid $accent
 
-				&::after
-					top: 50%
-					right: 5px
-					transform: translate(0, -50%) rotate(45deg)
-					width: 7px
-					height: 7px
-					border-top: 2px solid $accent
-					border-right: 2px solid $accent
+	&__pagination
+		width: 100%
+		bottom: 10vh !important
 
-		&_main
-			display: flex
-			justify-content: space-between
+	&__gallery
+		width: 10%
+		height: 100%
+		height: 55vh
+		max-height: 570px
 
-		&_col
-			width: 46%
+		img
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+			width: 100%
+			height: auto
+			border-radius: 5px
+
+		.swiper-slide
+			max-width: 5.5vw !important
+			max-height: 5.5vw !important
+			transition: all .6s
+			border-radius: 7px
+			overflow: hidden
+			
+	&__top
+		width: 90%
+
+		a
+			position: relative
+			display: block
+			width: 45%
+			height: 55vh
+			max-height: 570px
+			overflow: hidden
+			border-radius: 5px
+			
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			width: 100%
+			min-height: 100%
 
 		p
 			line-height: 2
@@ -733,6 +802,7 @@
 		li
 			display: flex
 			justify-content: space-between
+			align-items: center
 			margin-bottom: 4vh
 
 			&:last-child
@@ -740,6 +810,45 @@
 
 		b
 			font-size: 24px
+
+		&_content
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+
+			div
+				width: 48%
+
+			a
+				span
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+					display: block
+					width: 55px
+					height: 55px
+					border-radius: 50%
+					background-color: $accent
+					background-image: url(../img/search.png)
+					background-position: center
+					background-repeat: no-repeat
+					z-index: 100
+				
+	.gallery-thumbs .swiper-slide
+		height: 100%
+		border: 2px solid transparent
+
+	.gallery-thumbs .swiper-slide-thumb-active
+		border: 2px solid $accent
+
+	.swiper-slide
+		a
+			display: block
+			overflow: hidden
+		
+	.swiper-button-disabled
+		border-color: transparent !important
 
 	&__prev,
 	&__next
@@ -797,14 +906,6 @@
 			border-top: 3px solid #fff
 			border-right: 3px solid #fff
 
-	.swiper-button-disabled
-		border-color: transparent
 
-	&__pagination
-		width: 100%
-		bottom: 15vh !important
-
-	&__gallery
-		
 
 @import "media" // Always at the end

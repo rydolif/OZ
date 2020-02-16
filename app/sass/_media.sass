@@ -1,211 +1,490 @@
 
-@media only screen and (max-height : 1000px)
-	.container
-
-@media only screen and (max-width : 1860px)
-	.container
-
-
 @media only screen and (max-width : 1600px)
-	.portfolio
+	.soc
+		right: 15px
+
+	.navigation
+		left: 15px
 
 
-@media only screen and (max-width : 1300px)
+@media only screen and (max-width : 1480px)
+	.container
+		max-width: 1200px
+
+	.catalog__list li
+		margin-bottom: 2vh
+
+	.why__list img
+		margin-right: 3vw
+
+	.hero
+		&__slider img
+
+		h1
+			font-size: 48px !important
+
+			span,
+			b
+				font-size: 1.2em !important
+				margin-bottom: 5px
+
+		&__form
+			width: 36%
+
+			&_header
+				font-size: 28px
+
+	.work
+		&__pagination
+			bottom: 8vh !important
+
+		&__gallery
+			height: 40vh
+
+		&__top
+			a
+				height: 40vh
+
+			p, li
+				margin-bottom: 2vh
+
+		&__header b
+			font-size: 1.6em
+
+		&__top ul
+			font-size: 1.1em
+
+			b
+				font-size: 1.3em
+
+		&__header
+			margin-bottom: 5vh
+
+
+@media only screen and (max-width : 1240px)
+	.container
+		max-width: 992px
+
 	body
-		font-size: 16px
+		font-size: 14px
 
-
-@media only screen and (max-width : 1200px)
 	input
-		height: 50px
-		line-height: 50px
+		height: 50px !important
+		line-height: 50px !important
 		font-size: 16px
 
 		&::placeholder
 			line-height: 50px
 			font-size: 16px
+	h2
+		font-size: 2.5em
 
-	.btn
-		height: 50px
-		padding: 0 40px
-		font-size: 18px
+	.hero
 
-	.fullpage-wrapper
-		padding-right: 50px
+		h1
+			font-size: 36px !important
 
-	.soc
-		bottom: 20px
-		left: 20px
+			b
+				padding: 0 10px !important
 
-	.logo
-		top: 20px
-		left: 20px
+	.hero
+		&__form
+			&_header
+				font-size: 1.5em
+				padding: 20px
 
-	.nav
-		width: 50px
+			&_main
+				padding: 20px
 
-		a
-			font-size: 16px
+			button
+				right: 20px
 
-		&__list a
-			height: 50px
-			padding: 
-				top: 15px
-				bottom: 15px
-			
+		&__footer
+			font-size: .8em
+			padding: 3vh
+
+	.swiper-pagination span
+		width: 30px
+		height: 30px
+
+		&::before
+			width: 10px
+			height: 10px
 	
-	.portfolio
-		&__slider
-			max-width: 75vw
-			width: 100%
+	.catalog__list
+		z-index: 2
 
-		&__item
-			display: flex
-			align-items: center
+		li div
+			padding: 3vh 3vh 3vh 6vh
+			font-size: 14px
 
 			img
-				display: block
-				height: auto
-				width: 100%
-				margin: auto
-	
-		&__pagination
-			right: -35px !important
+				top: 5px
+				left: 5px
 
-		&__text p
-			margin-bottom: 3vw
-			letter-spacing: 25px
-			margin-right: -25px
+		a span
+			font-size: 12px
+			top: -5px
+
+	.why__list li
+		width: 60%
+		margin-bottom: 4vh
 
 	.contacts
+		&__info p
+			font-size: 1.1em
+
+		&__wrap p
+			font-size: 1.2em
+
+		&__form_btn button
+			font-size: 1.3em
+
+
+@media only screen and (max-width : 1032px)
+	.container
+		max-width: 767px
+
+	.navigation
+		display: none
+
+	.header
+		&__info,
+		&__nav
+			width: 46%
+
+	.hero
+		&__form
+			margin-right: 6vh
+
+			&_header
+				padding: 10px
+		
+		&__footer
+			font-size: 1em
+
+	.why__list
+
+		li
+			font-size: 1.2em
+			width: 50%
+
+		img
+			width: 5vw
+
+	.contacts
+		&__info
+			margin-right: 6vh
+
 		&__info,
 		&__wrap
-			max-width: 48%
-
-		p
-			margin-bottom: 3vw
-			letter-spacing: 25px
+			width: 43%
 	
-		&__info a
-			margin-bottom: 1.8vw
+	.work__top_content
+		div
+			width: 52%
 
-		&__form
-			&_line
-				margin-bottom: 3vw
+		li,
+		p
+			font-size: 1em
+			line-height: 1.6
+			margin-bottom: 5px
 
-			&_btn
-				justify-content: flex-start
+		b
+			font-size: 1.2em
+	
+	.work
+		&__next, 
+		&__prev
+			width: 40px
+			height: 40px
+
+			&::before
+				width: 15px
+
+			&::after
+				width: 10px
+				height: 10px
 
 
-@media only screen and (max-width : 992px)
-	.portfolio__text p,
-	.contacts p
-		letter-spacing: 15px
+		&__top
+			margin-right: 5vh
+
+			ul
+				font-size: 14px
+
+				b
+					font-size: 14px
+
+		&__pagination
+			bottom: 5vh
 
 
 @media only screen and (max-width : 767px)
-	.portfolio__text
-		right: 50%
-
-	.contacts
-		p
-			margin-bottom: 10px
-
-		a
-			margin-bottom: 10px
-
-		&__info,
-		&__wrap
-			max-width: 300px
-			text-align: center
-			margin: 0 auto
-
-		&__wrap
-			margin-bottom: 20px
-
-		&__form
-			&_btn
-				justify-content: center
-	
-	.btn
-		&:hover
-			span
-				right: -60px !important
-
-		span
-			right: -50px !important
-
+	.container
+		max-width: 578px
 
 	input
-		height: 40px
-		line-height: 40px
+		height: 40px !important
+		line-height: 40px !important
 		font-size: 14px
 
-
 		&::placeholder
-			height: 40px
-			line-height: 40px
+			height: 40px !important
+			line-height: 40px !important
 			font-size: 14px
+
+	.header
+		&__nav li
+			margin-right: 15px
+
+		&__info
+			flex-direction: column
+			text-align: right
+			align-items: flex-end
+
+			a
+				display: inline-block
+				margin-bottom: 5px
+				margin-right: 0 !important
+
+		&__logo
+			width: 10vw
+
+		&__form_header
+			font-size: 1.2em
+
+	.hero
+		h1
+			font-size: 26px !important
+
+		&__container
+			flex-wrap: wrap
+			justify-content: center
+			height: auto
+			
+		&__content,
+		&__form
+			width: 100%
+			margin-right: 5vh
+
+		&__content
+			margin-bottom: 3vh
+
+		&__form
+			max-width: 320px
+
+		.swiper-pagination
+			bottom: 12vh !important
+	
+	.why__list li
+		width: 62%
+
+	.catalog__list
+		width: 70%
+
+
+		li
+			font-size: 3vh
+			color: #000
+
+			div
+				max-width: 205px
+				background-color: rgba(#fff, .9)
+
+	.contacts__wrap p
+		flex-wrap: wrap
+
+	.work
+		padding:
+			top: 9vh
+			bottom: 9vh
+		height: 100%
+
+		&__gallery
+			.swiper-slide
+				max-width: 8vh !important
+				max-height: 8vh !important
+				width: 100%
+				height: 100%
+
+		&__top_content div
+			width: 100%
+
+		&__pagination
+			position: relative
+			bottom: 0 !important
+
+		&__top
+			margin-bottom: 20px
+
+			&_content
+
+		.swiper-slide a
+			margin: 0 auto 20px
+			width: 40vh
+			height: 40vh
 
 
 @media only screen and (max-width : 576px)
-	.header
+	
+	h2
+		margin-bottom: 5vh
+
+	.header__logo
+		display: none
+	
+	.hero
+		.swiper-pagination
+			padding-bottom: 15vh
+
+		&__footer_list
+			flex-wrap: wrap
+
+			p
+				width: 45%
+				text-align: center
+				margin-bottom: 5px
+
+	.contacts
+		&__wrap,
+		&__info
+			width: 100%
+
+		&__container
+			flex-wrap: wrap
+
+		&__info
+			padding-top: 4px
+
+			p
+				margin-bottom: 3vh
+
+		&__wrap
+			margin:
+				right: 5vh
+				bottom: 5vh
+
+			p
+				margin-bottom: 3vh
+
+		&__form_line
+			margin-bottom: 3vh
+
 
 @media only screen and (max-width : 480px)
-	.nav
-		width: 30px
+	body
+		font-size: 12px
+
+	h2
+		font-size: 2em
+		margin-bottom: 3vh
+
+	.container
+
+
+	.header
+		&__nav
+			flex-direction: column
+
+		&__info
+			width: 50%
+
+	.hero
+		&__footer
+			padding: 3vh 0
+
+		.swiper-pagination
+			padding-bottom: 13vh
+	
+	.why__list
+		li
+			font-size: 1em
+			width: 90%
+
+		img
+			width: 8vw
+
+	.catalog
+		&__container
+			flex-wrap: wrap
+
+		h2
+			width: 100%
 
 		&__list
-			height: 300px
+			width: 100%
+
+			li
+				margin-bottom: 1vh
+
+				&::before
+					display: none
+
+				div
+					right: 0
+					left: 0
+					width: 100%
+					max-width: 90%
+					border-right: 0
+					border-top: 2px solid $accent
+					padding: 2vh
+					font-size: 10px
+					bottom: auto
+					top: 100%	
+
+				img
+					display: none
+
+			p
+				margin-bottom: 5px
+	
+	.work
+		&__header
+			margin-bottom: 3vh
+
+			span
+				margin: 0 15px
+
+		&__top
+			width: 75%
 
 			a
-				padding: 5px 15px
-				height: 30px
+				span
+					width: 35px
+					height: 35px
+					background-size: 15px
 
-		&__arrow a
-			width: 20px
-			height: 20px
 
-	.fullpage-wrapper
-		padding-right: 30px
+		&__gallery
+			width: 20%
 
-	#fp-nav.fp-right
-		right: 0
-
-	.portfolio__arrow
-		display: none
-
-	.contacts__form_btn span
-		display: none
-	
-	.soc
-		left: 10px
-		bottom: 10px
-
-		a
+		&__next,
+		&__prev
 			width: 30px
 			height: 30px
-			margin-bottom: 10px
-	
-	.logo
-		top: 10px
-		left: 10px
+			border: 2px solid #fff
 
-	.contacts p,
-	.portfolio__text p
-		letter-spacing: 3px
+			&::before
+				width: 10px
+				height: 2px
 
-	.portfolio__text
-		h2
-			margin-bottom: 25px
+			&::after
+				width: 8px
+				height: 8px
+				right: 7px
+				border-top: 2px solid #fff
+				border-right: 2px solid #fff
 
-		p
-			margin-right: 0
+		&__prev
+			&::after
+				left: 7px
 
-	.btn
-		height: 40px
-		font-size: 16px
-		letter-spacing: 2px
-		width: 100%
+	.swiper-pagination
+		height: 35px
+
+
+
+
 
 

@@ -1,5 +1,8 @@
 $(function() {
 
+//-------------------------------попандер---------------------------------------
+  $('.modal').popup({transition: 'all 0.3s'});
+  
 //-------------------------------preloader---------------------------------------
     setTimeout(function() {
       $('#ctn-preloader').addClass('loaded');
@@ -15,46 +18,62 @@ $(function() {
     }, 2000);
     
 //-------------------------------hero slider---------------------------------------
-	var swiper = new Swiper('.hero__slider', {
-	  spaceBetween: 0,
-	  effect: 'fade',
-	  lazy: true,
-	  pagination: {
+  var swiper = new Swiper('.hero__slider', {
+    spaceBetween: 0,
+    effect: 'fade',
+    lazy: true,
+    pagination: {
         el: '.hero__pagination',
+        clickable: true,
       },
-	  // autoplay: {
-	  //   delay: 4500,
-	  //   disableOnInteraction: false,
-	  // },
-	});
-
+    autoplay: {
+      delay: 4500,
+      disableOnInteraction: false,
+    },
+  });
+    
 //-------------------------------work slider---------------------------------------
 	var swiper = new Swiper('.work__slider', {
 	  spaceBetween: 0,
 	  effect: 'fade',
-	  lazy: true,
-	  pagination: {
-        el: '.work__pagination',
-      },
-	  // autoplay: {
-	  //   delay: 4500,
-	  //   disableOnInteraction: false,
-	  // },
-	  navigation: {
-        nextEl: '.work__next',
-        prevEl: '.work__яprev',
-      },
+	  nested: true,
+    navigation: {
+      nextEl: '.work__next',
+      prevEl: '.work__prev',
+    },
+    pagination: {
+      el: '.work__pagination',
+      clickable: true,
+    },
 	});
 
 //-------------------------------work slider---------------------------------------
-    var swiper = new Swiper('.work__gallery', {
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 5,
+      freeMode: true,
+      loopedSlides: 5,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
       direction: 'vertical',
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+      breakpoints: {
+        1600: {
+          slidesPerView: 4,
+          spaceBetween: 10
+        },
+        1240: {
+          slidesPerView: 3,
+          spaceBetween: 10
+        }
       },
     });
-
+    var galleryTop = new Swiper('.gallery-top', {
+      spaceBetween: 40,
+      loopedSlides: 5,
+      thumbs: {
+        swiper: galleryThumbs,
+      },
+    });
 
 //-------------------------------fullpage---------------------------------------
 	$('#fullpage').fullpage({
